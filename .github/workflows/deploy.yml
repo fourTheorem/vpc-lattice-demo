@@ -1,0 +1,25 @@
+name: Deploy pages
+on: push
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install dependencies
+        working-directory: slides/
+        run: npm ci
+      - name: Install slidev
+        run: npm i -g @slidev/cli
+      - name: Build
+        working-directory: slides/
+        run: slidev build --base vpc-lattice-demo
+      - name: Deploy pages
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          build_dir: slides/dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
