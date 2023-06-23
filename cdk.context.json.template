@@ -1,0 +1,10 @@
+{
+	"networkingAccount": "123456789012",
+	"recommendationAccount": "123456789013",
+	"cartAccount": "123456789014",
+	"orgId": "o-ab12cd34",
+	"orgArn": "arn:aws:organizations::123456789011:organization/o-ab12cd34",
+	"rootDomain": "example.com",
+	"hostedZoneId": "R53HOSTEDZONE12"
+}
+
