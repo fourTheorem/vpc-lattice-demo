@@ -5,7 +5,7 @@ import * as Case from 'case'
 import { CentralNetworkStack } from '../lib/net/central-net-stack'
 import { ServiceAccountBaseNetStack } from '../lib/net/service-account-base-net-stack'
 import { RecommendationServiceStack } from '../lib/recommendation-service/recommendation-service-stack'
-import { DemoClientStack } from '../lib/c9-client-stack'
+import { DemoClientStack } from '../lib/demo-client-stack'
 import { getConfig } from '../lib/config'
 import { CartServiceStack } from '../lib/cart-service/cart-service-stack'
 

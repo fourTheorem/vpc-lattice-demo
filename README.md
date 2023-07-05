@@ -28,7 +28,7 @@ Normally, the services deployed to each separate account would be in separate CD
 
 The application assumes three accounts:
 
-1. The central networking admina ccount
+1. The central networking admin account
 2. The cart service account
 3. The recommendation service account
 
