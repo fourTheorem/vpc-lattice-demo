@@ -77,12 +77,7 @@ export class CartServiceStack extends ServiceStack {
       config: {
         vpcIdentifier: this.serviceConnectivity.vpc.vpcId,
         port: 80,
-        protocol: 'HTTP',
-        healthCheck: {
-          path: '/health',
-          enabled: true,
-          healthyThresholdCount: 2
-        }
+        protocol: 'HTTP'
       },
       targets: [{ id: ecsApi.loadBalancer.loadBalancerArn }]
     })

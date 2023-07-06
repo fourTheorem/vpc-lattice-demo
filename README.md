@@ -28,7 +28,7 @@ Normally, the services deployed to each separate account would be in separate CD
 
 The application assumes three accounts:
 
-1. The central networking admina ccount
+1. The central networking admin account
 2. The cart service account
 3. The recommendation service account
 
@@ -40,6 +40,16 @@ We will deploy:
 - The recommendation service (with the VPC Lattice service) to the recommendation account
 - A demo client stack to the networking account, used to test the APIs end-to-end 
 
+## Prerequisites
+
+This demo uses Resource Access Manager to share the VPC Lattice Service Network within the AWS Organization.
+You need to enable trusted access for RAM in your AWS Organizations management account.
+
+```bash
+# With Management Account credentials
+aws ram enable-sharing-with-aws-organization
+```
+
 ## Setup
 
 You will need Node.js v16 or greater, Docker, and Python.
@@ -48,7 +58,7 @@ You will need Node.js v16 or greater, Docker, and Python.
 ```bash
 npm install
 ```
-2. Then, copy [cdk.context.json.template](./cdk.context.json.template) to `cdk.template.json`. Specify the values for each account ID, the organization ID and ARN, and Route53 Public Hosted Zone for the domain you want to use.
+2. Then, copy [cdk.context.json.template](./cdk.context.json.template) to `cdk.context.json`. Specify the values for each account ID, the organization ID and ARN, and Route53 Public Hosted Zone for the domain you want to use.
 3. Bootstrap the CDK accounts. Each bootstrap step requires the right AWS credentials to be set up for the account in question. Make sure you set environment variables for the `..*ACCOUNT_ID`s or replace them with the literal values.
 ```bash
 # With Cart Account credentials
