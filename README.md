@@ -28,7 +28,7 @@ Normally, the services deployed to each separate account would be in separate CD
 
 The application assumes three accounts:
 
-1. The central networking admina ccount
+1. The central networking admin account
 2. The cart service account
 3. The recommendation service account
 
@@ -39,6 +39,16 @@ We will deploy:
 - The cart service (with the VPC Lattice service) to the cart account
 - The recommendation service (with the VPC Lattice service) to the recommendation account
 - A demo client stack to the networking account, used to test the APIs end-to-end 
+
+## Prerequisites
+
+This demo uses Resource Access Manager to share the VPC Lattice Service Network within the AWS Organization.
+You need to enable trusted access for RAM in your AWS Organizations management account.
+
+```bash
+# With Management Account credentials
+aws ram enable-sharing-with-aws-organization
+```
 
 ## Setup
 
