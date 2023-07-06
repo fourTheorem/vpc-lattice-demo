@@ -152,7 +152,10 @@ By exploring the Service Network logs, Service CloudWatch metrics, and VPC Flow 
 
 ## Cleaning Up
 
-These stacks include resources that can incur reasonable cost over time, including Lattice Services, VPC Endpoints and a NAT Gateway in the DemoClient stack. To remove all stacks, type:
+These stacks include resources that can incur reasonable cost over time, including Lattice Services, VPC Endpoints and a NAT Gateway in the DemoClient stack. To remove all stacks:
+
+1. Delete the manual VPC association between the DemoClient VPC and the Service Network
+2. Destroy all CloudFormation stacks:
 ```bash
 cdk destroy --all
 ```
