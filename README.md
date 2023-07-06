@@ -48,7 +48,7 @@ You will need Node.js v16 or greater, Docker, and Python.
 ```bash
 npm install
 ```
-2. Then, copy [cdk.context.json.template](./cdk.context.json.template) to `cdk.template.json`. Specify the values for each account ID, the organization ID and ARN, and Route53 Public Hosted Zone for the domain you want to use.
+2. Then, copy [cdk.context.json.template](./cdk.context.json.template) to `cdk.context.json`. Specify the values for each account ID, the organization ID and ARN, and Route53 Public Hosted Zone for the domain you want to use.
 3. Bootstrap the CDK accounts. Each bootstrap step requires the right AWS credentials to be set up for the account in question. Make sure you set environment variables for the `..*ACCOUNT_ID`s or replace them with the literal values.
 ```bash
 # With Cart Account credentials
