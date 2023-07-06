@@ -32,7 +32,7 @@ export class RecommendationServiceStack extends ServiceStack {
     })
 
     // Create a single Lattice Target Group for HTTP requests
-    const recTg = new lattice.CfnTargetGroup(this, 'recTg', {
+    const recTg = new lattice.CfnTargetGroup(this, 'TGRec', {
       type: 'LAMBDA',
       targets: [{ id: recFunction.functionArn }]
     })

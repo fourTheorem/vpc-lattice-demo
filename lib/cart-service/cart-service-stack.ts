@@ -63,7 +63,7 @@ export class CartServiceStack extends ServiceStack {
     }))
 
     // Create a target group for the Lambda implementation
-    const cartTargetGroupLambda = new lattice.CfnTargetGroup(this, 'TGB', {
+    const cartTargetGroupLambda = new lattice.CfnTargetGroup(this, 'TGCartLambda', {
       type: 'LAMBDA',
       targets: [{ id: cartFunction.functionArn }]
     })
@@ -72,7 +72,7 @@ export class CartServiceStack extends ServiceStack {
     const ecsApi = new EcsApi(this, 'EcsApi', { vpc: this.serviceConnectivity.vpc, rootDomain })
 
     // Create a target group for the ECS implementation
-    const cartTargetGroupEcs = new lattice.CfnTargetGroup(this, 'TGBLambda', {
+    const cartTargetGroupEcs = new lattice.CfnTargetGroup(this, 'TGCartECS', {
       type: 'ALB',
       config: {
         vpcIdentifier: this.serviceConnectivity.vpc.vpcId,
