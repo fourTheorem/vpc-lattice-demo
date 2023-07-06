@@ -165,7 +165,8 @@ By exploring the Service Network logs, Service CloudWatch metrics, and VPC Flow 
 These stacks include resources that can incur reasonable cost over time, including Lattice Services, VPC Endpoints and a NAT Gateway in the DemoClient stack. To remove all stacks:
 
 1. Delete the manual VPC association between the DemoClient VPC and the Service Network
-2. Destroy all CloudFormation stacks:
+2. Delete the CNAME records from the cart and recommendation accounts in the respective accounts. These are not deleted automatically when the service stacks are deleted.
+3. Destroy all CloudFormation stacks:
 ```bash
 cdk destroy --all
 ```
